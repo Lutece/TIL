@@ -7,9 +7,10 @@
 - 큰 주제안에서 하나의 개념에 대한 정리가 어느정도 완성되면 [블로그](http://lutece.kr)에 하나의 글로 다시 정리하여 포스팅한다.
 - 폴더와 문서의 이름은 기본적으로 영문으로 한다.
 
-## 정리가 필요한 것들
+## 공부 리스트
 
 - ETC / License.md
 - ETC / Readme.md (readme 작성방법에 대해)
 - Network / CNAME.md
 - CSS / BEM_and_Methodologies_for_CSS.md
+- Analysis_of_Framework / vue
