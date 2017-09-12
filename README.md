@@ -10,5 +10,5 @@
 ## 정리가 필요한 것들
 
 - ETC / License.md
-- ETC / Readme.md 작성방법에 대해
+- ETC / Readme.md (readme 작성방법에 대해)
 - Network / CNAME.md
