@@ -1,4 +1,5 @@
-## 이 예제는 `webpack.js.org`의 `Guide / Getting Started`의 과정을 진행한 예제입니다.
+## 설명
+- 이 예제는 `webpack.js.org`의 `Guide / Getting Started`의 과정을 진행한 예제입니다.
 
 ```javascript
     npm init -y
