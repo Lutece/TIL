@@ -1,0 +1,16 @@
+{
+  "name": "TreeShaking2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.6.0"
+  }
+}
