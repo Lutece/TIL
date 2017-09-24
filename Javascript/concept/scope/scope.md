@@ -34,7 +34,7 @@
 
         변수 선언 (Variable Declaration)
 
-        |               |
+        |                           |
 
         확인자 (Identifier_a값을 확인)  대입 수식 (Assignment Expresstion)
 
@@ -67,7 +67,7 @@
 
 2. RHS 참조
     - 특정 변수의 값을 찾을 때 일어나는 검색이다. 아래로 예를 들면 a의 변수를 찾아야 하는 과정이 먼저 일어나며 이 과정을 `RHS`라 할 수 있다.
-    - 대입한 값을 찾는다.
+    - 다시 말해, 대입한 변수의 참조를 찾는 과정을 의미한다.
     ```javascript
         console.log(a);
     ```
