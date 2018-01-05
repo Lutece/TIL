@@ -6,7 +6,7 @@
 ## git config --global
 - 로컬 환경에서 push 명령어를 내릴 때 보내줘야할 정보를 미리 설정할 수 있음
 
-## 추가로 정리
+## 추가 정리
 - git config credential
 
 ```
