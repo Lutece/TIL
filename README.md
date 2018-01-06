@@ -6,6 +6,9 @@
 - 내용: 스스로를 매일 피드백하고 내용 기록하기
 - 기간: ~ 2018/12/31
 
+## Log
+[TIL](https://github.com/Lutece/TIL/blob/master/TIL.md)
+
 ## Contents
 
 - Leisureq
