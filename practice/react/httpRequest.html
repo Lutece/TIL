@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React Example</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      /*
+        github에 graphql로 github 정보를 불러올 수 있게 할 수 있다.
+        axios, graphql 정리
+      */
+      class UserCompany extends React.Component {
+        state = {company: undefined, loaded: false}
+        fetchCompany = () => {
+          axios({
+            url: 'https://api.github.com/graphql',
+            method: 'post',
+            data: {
+              query: `{
+                user(login: "${this.props.username}") {
+                  company
+                }
+              }`,
+            },
+            headers: {
+              Authorization: `bearer I DELETED THE TOKEN. YOU'LL HAVE TO MAKE YOUR OWN`,
+            },
+          }).then(
+            response => {
+              this.setState({
+                loaded: true,
+                company:
+                  response.data.data.user.company,
+              })
+            },
+            error => {
+              this.setState({
+                error,
+                loaded: true,
+              })
+            },
+          )
+        }
+        componentDidMount() {
+          this.fetchCompany()
+        }
+        componentDidUpdate(prevProps) {
+          if (
+            prevProps.username !== this.props.username
+          ) {
+            this.fetchCompany()
+          }
+        }
+        render() {
+          return this.state.loaded
+            ? this.state.error
+              ? 'ERROR (You probably need to add your own token)'
+              : this.state.company || 'Unknown'
+            : '...'
+        }
+      }
+      
+      class App extends React.Component {
+        state = {username: undefined}
+        handleSubmit = e => {
+          e.preventDefault()
+          this.setState({
+            username: this.inputNode.value,
+          })
+        }
+        render() {
+          const {username} = this.state
+          return (
+            <div>
+              <form onSubmit={this.handleSubmit}>
+                <input
+                  ref={node => (this.inputNode = node)}
+                />
+              </form>
+              {username ? (
+                <UserCompany username={username} />
+              ) : null}
+            </div>
+          )
+        }
+      }
+      
+      ReactDOM.render(
+        <App />,
+        document.getElementById('root'),
+      )
+      </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React Example</title>
+  </head>
+  <body>
+    <div id="greeting-div"></div>
+
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      /*
+        리액트에서 발생하는 이벤트 핸들러는 Proxy와 관련된 이벤트 핸들러이기 떄문에
+        event.native를 활용하여 DOM Event handler를 접근할 수 있다.
+        일반적인 event는 리액트에서 제어하는 이벤트 핸들러이다.
+
+        기타: JSON 객체와 Object 객체 정리
+      */
+        const state = {eventCount: 0, username: ''}
+        function App() {
+          return (
+            <div>
+              <p>
+                There have been {state.eventCount} events
+              </p>
+              <p>
+                <button onClick={increment}>⚛️</button>
+              </p>
+              <p>You typed: {state.username}</p>
+              <p>
+                <input onChange={updateUsername} />
+              </p>
+            </div>
+          )
+        }
+        function increment() {
+          setState({
+            eventCount: state.eventCount + 1,
+          })
+        }
+        function updateUsername(event) {
+          setState({
+            username: event.target.value,
+          })
+        }
+
+        /*
+          정보를 저장하는 수단인 state의 변화가 있을 때 재 렌더링을 해서
+          화면에 반영할 수 있도록 함.
+        */
+        function setState(newState) {
+          Object.assign(state, newState)
+          renderApp()
+        }
+        
+        function renderApp() {
+          ReactDOM.render(
+            <App />,
+            document.getElementById('root'),
+          )
+        }
+        renderApp()      
+    </script>
+  </body>
+</html>

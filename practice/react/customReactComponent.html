@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React Example</title>
+  </head>
+  <body>
+    <div id="greeting-div"></div>
+
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      
+      const rootElement = document.getElementById('root');
+      const message = (props) => <div>{props.msg}</div>
+      const Message = (props) => <div>{props.msg}</div>
+      const MessageChildren = (props) => <div>{props.children}</div>
+
+      const element = (
+        <div className='container'>
+          {React.createElement(message, {msg: 'Helloworld'})}
+          {React.createElement(message, {msg: 'goodbye'})}
+          <Message msg="hello component" />
+          <Message msg="goodbye component" />
+          <Message msg="안녕" />
+          <MessageChildren>Children</MessageChildren>
+          <MessageChildren>{/*재귀적 활용이 가능하다. = children*/}
+            Children
+            <MessageChildren>Children</MessageChildren>
+          </MessageChildren>
+        
+          
+          {/*대문자 시작이어야함, 소문자는 문자열로 인식해서 DOM을 그리는 함수의 이름을 문자열로 인식함..*/}
+        </div>
+      )
+
+      ReactDOM.render(element, rootElement)
+    </script>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React Example</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+
+      /*
+        Object 정리 :
+        - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
+        - http://exploringjs.com/es6/ch_destructuring.html
+        - 타이머 만들어보는 과제 진행해보기
+
+          const {lapse, running} = this.state;
+      */
+
+      class StopWatch extends React.Component {
+
+        state = {lapse: 0, running: false}
+
+        handleRunClick = () => {
+          this.setState(state => {
+            if (state.running) {
+              clearInterval(this.timer)
+            } else {
+              const startTime =
+                Date.now() - this.state.lapse
+              this.timer = setInterval(() => {
+                this.setState({
+                  lapse: Date.now() - startTime,
+                },{
+                  () => {
+                    //MemoryLeak에 대한 정리하기
+                    console.log(this.state.lapse);
+                  }
+                })
+              })
+            }
+            return {running: !state.running}
+          })
+        }
+
+        componentWillUnMount() {
+          clearInterval(this.timer);
+        }
+
+        handleClearClick = () => {
+          clearInterval(this.timer)
+          this.setState({lapse: 0, running: false})
+        }
+        render() {
+          const {lapse, running} = this.state
+          const buttonStyles = {
+            border: '1px solid #ccc',
+            background: '#fff',
+            fontSize: '2em',
+            padding: 15,
+            margin: 5,
+            width: 200,
+          }
+          return (
+            <div style={{textAlign: 'center'}}>
+              <label
+                style={{
+                  fontSize: '5em',
+                  display: 'block',
+                }}
+              >
+                {lapse}ms
+              </label>
+              <button
+                onClick={this.handleRunClick}
+                style={buttonStyles}
+              >
+                {running ? 'Stop' : 'Start'}
+              </button>
+              <button
+                onClick={this.handleClearClick}
+                style={buttonStyles}
+              >
+                Clear
+              </button>
+            </div>
+          )
+        }
+      }
+      const element = <StopWatch />
+      ReactDOM.render(
+        element,
+        document.getElementById('root'),
+      )    
+    </script>
+  </body>
+</html>

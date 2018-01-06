@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React Example</title>
+  </head>
+  <body>
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <div id="root"></div>
+    <style>
+      .box {
+        border: 1px solid #333;
+      }
+      .box--large {
+        width: 180px;
+        height: 180px;
+      }
+      .box--medium {
+        width: 120px;
+        height: 120px;
+      }
+      .box--small {
+        width: 60px;
+        height: 60px;
+      }
+    </style>
+
+    <script type="text/babel">
+
+      /* 
+        - Box 컴포넌트를 정의하는 곳
+         Props를 활용하여 클래스와 스타일을 조작함
+         rest operation을 활용해 직접 다뤄야 하는 prop과 
+         적용만 하면 되는 prop을 구분하여 작업을 진행함
+      */
+      function Box({
+        style,
+        size,
+        className = '',
+        ...rest
+      }) {
+        const sizeClassName = size ? `box--${size}` : ''
+        return (
+          <div
+            className={`box ${className} ${sizeClassName}`}
+            style={{paddingLeft: 20, ...style}}
+            {...rest}
+          />
+        )
+      }
+
+      /*
+        Box 컴포넌트를 실제로 활용하는 공간,
+        prop을 적용하고 있다.(size, style)
+      */
+      const element = (
+        <div>
+          <Box
+            size="small"
+            style={{backgroundColor: 'lightblue'}}
+          >
+            small box
+          </Box>
+          <Box
+            size="medium"
+            style={{backgroundColor: 'pink'}}
+          >
+            medium box
+          </Box>
+          <Box
+            size="large"
+            style={{backgroundColor: 'orange'}}
+          >
+            large box
+          </Box>
+        </div>
+      )
+
+
+      ReactDOM.render(
+        element,
+        document.getElementById('root')
+      )
+    </script>
+  </body>
+</html>

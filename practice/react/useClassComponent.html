@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React Example</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      class Counter extends React.Component {
+  
+        /*
+          public Class Field
+          ES6와 함께 정리가 필요함
+          Class, super, constructor, this scope, arrow function and this
+        */
+        
+        state = {count: 0}
+
+        handleClick = () => {
+          this.setState(({count}) => ({
+            count: count + 1,
+          }))
+        }
+
+        render() {
+          return (
+            // <button onClick={this.handleClick.bind(this)}
+            <button onClick={this.handleClick}>
+              {this.state.count}
+            </button>
+          )
+        }
+      }
+
+      ReactDOM.render(
+        <Counter />,
+        document.getElementById('root'),
+      )
+    </script>
+  </body>
+</html>

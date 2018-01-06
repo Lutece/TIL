@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React Example</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      const rootElement = document.getElementById('root')
+      function tick() {
+        const time = new Date().toLocaleTimeString()
+        const element = (
+          <div>
+            It is
+            <input value={time} />
+            <input value={time} />
+          </div>
+        )
+        ReactDOM.render(element, rootElement)
+      }
+      
+      // const element = `<div>It is <input value="${time}"</div>`;
+      // function tick() {
+      //   const time = new Date().toLocaleTimeString()
+      //   const element = `<div>It is <input value="${time}"</div>`;
+      //   rootElement.innerHTML = element;
+      // }
+      
+      tick()
+      setInterval(tick, 1000)
+      // setInterval(tick2, 1000)
+
+      /*
+        
+        Rendere를 통한 dom rendering은 변화가 있는 곳만 렌더링 시키지만,
+        일반적인 dom 렌더링은 dom 전체에 영향을 미치기 떄문에 성능의 차이가 있을 수 밖에 없다.
+
+      */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React Example</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      const rootElement = document.getElementById('root');
+      // const element = document.createElement('div');
+      // element.textContent = 'hello world';
+      // rootElement.appendChild('element');
+
+      // const element = React.createElement('div',{className: 'container'}, ['Hello World', 'Good Morning']);
+      // console.log(element);
+      // ReactDOM.render(element, rootElement);
+
+      const content = 'Hello World';
+      const myClassName = 'container';
+      const props = {
+        className: 'container',
+        children: 'Hello World'
+      };
+
+      // const element = <div className={myClassName}>{(()=>content)()}</div>
+      // const element = <div {...props} />
+      const element = <div {...props} className='my-class'>Hi</div>
+      
+      ReactDOM.render(element, rootElement);
+      /*
+        class = className
+        { expression } 
+        { expression }을 활용하여 DOM 속성을 정의할 수 있지만 동일한 속성의 값이 뒤에 올 경우 Overwritting 된다.
+      */
+    </script>
+  </body>
+</html>

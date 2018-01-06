@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React Example</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      /*
+        event.preventDefault, <form>과 함께 정리할 것
+        event.target을 console로 확인할 것 (react내에서 form의 액션이 어떻게 다뤄지는 지)
+      */
+      class NameForm extends React.Component {
+        handleSubmit = event => {
+          event.preventDefault()
+          console.log({target: event.target})
+          console.log(event.target[0].value)
+          console.log(
+            event.target.elements.username.value,
+          )
+          console.log(this.inputNode.value)
+        }
+        render() {
+          return (
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Name:
+                <input
+                  type="text"
+                  name="username"
+                  ref={node => (this.inputNode = node)}
+                />
+              </label>
+              <button type="submit">Submit</button>
+            </form>
+          )
+        }
+      }
+      ReactDOM.render(
+        <NameForm />,
+        document.getElementById('root'),
+      )
+    </script>
+  </body>
+</html>
