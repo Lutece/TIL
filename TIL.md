@@ -8,4 +8,4 @@
 
 ### - 01.06
 - [리액트 기본 강의 듣기](https://github.com/Lutece/TIL/blob/master/react)
-- [리액트 기반의 블로그 세팅](http://http://blog.lutece.kr/)
+- [리액트 기반의 블로그 세팅](http://blog.lutece.kr/)
