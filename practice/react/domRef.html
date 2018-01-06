@@ -61,6 +61,7 @@
         }
         render() {
           return (
+            //외부에서 render함수를 통해 rendering되는 DOM을 참조하기 위해 ref 사용
             <div
               ref={node => (this.rootNode = node)}
               className="tilt-root"
