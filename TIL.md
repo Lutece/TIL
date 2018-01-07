@@ -11,5 +11,5 @@
 - [리액트 기반의 블로그 세팅](http://blog.lutece.kr/)
 
 ### - 01.07
-- [리액트 라우터 강의 듣기](https://github.com/Lutece/TIL/blob/master/reactRouter)
+- [리액트 라우터 강의 듣기](https://github.com/Lutece/TIL/blob/master/practice/reactRouter/list.md)
 - CSS3 flex 연습 (정리 필요)
