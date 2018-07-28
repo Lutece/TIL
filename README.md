@@ -1,10 +1,16 @@
 # TIL
+- UX/UI
+- English
+- FrontEnd
+- Software Principle
+- Programming Paradigm
+- Programming Languages
+- Algorithms & Interview Questions
 
-매일 공부한 내용 기록하기
-
-- 영어
-- 프로그래밍
-
-## 진행중인 목록
-
-- React Navigation
+## A list of study
+- ReactNative
+  - Yoga
+  - React-Navigation
+- OAuth Protocol
+- Javascript
+  - this
