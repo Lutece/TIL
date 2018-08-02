@@ -6,6 +6,7 @@
 - Programming Paradigm
 - Programming Languages
 - Algorithms & Interview Questions
+- Good Programmer
 
 ## A list of study
 - ReactNative
@@ -14,3 +15,5 @@
 - OAuth Protocol
 - Javascript
   - this
+- Reading
+  - 실용주의 프로그래머
