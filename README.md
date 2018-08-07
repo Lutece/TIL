@@ -2,18 +2,17 @@
 - UX/UI
 - English
 - FrontEnd
-- Software Principle
-- Programming Paradigm
+- Software Principles
+- Programming Paradigms
 - Programming Languages
 - Algorithms & Interview Questions
-- Good Programmer
+- Programmer
 
 ## A list of study
 - ReactNative
   - Yoga
-  - React-Navigation
-- OAuth Protocol
 - Javascript
-  - this
 - Reading
   - 실용주의 프로그래머
+  - 해커와 화가
+  - You don't know JS - 1
