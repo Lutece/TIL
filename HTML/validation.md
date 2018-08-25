@@ -71,11 +71,26 @@ Form Validation이란 데이터를 필요로 하는 곳에 데이터를 전달�
     :out-of-range : range 범위를 넘어가는 값이 입력됐을 때 적용되는 스타일을 정의합니다.
 ```
 
+- UX
+  
+ 1. 사용자가 입력란을 봤을 때 직관적으로 필수적으로 입력해야 하는 데이터가 어떤 것인지 인식할 수 있도록 해야합니다.
+  보통은 필수로 입력해야 한다는 의미를 부여하기 위해 input 설명을 위한 label에 asterisk(*)를 붙입니다. 그러나 * 기호를 Required의 의미로 인식하지 못하는 웹 경험이 없는 사용자들을 위해 'Required' 문구를 적용하기도 합니다.
+  
+ 2. 다양한 정보를 입력하는 경우 데이터 입력이 끝날 시 바로 유효성을 체크하여 invalid 상태를 알리도록 합니다.
+
+ 3. 복잡한 패턴을 요구하는 데이터 혹은 입력하는 정보의 범위가 다양할 경우 placeholder 또는 입력란 옆에 도움이 되는 문구를 적용해 처음 입력 시 정확하게 데이터를 입력할 수 있도록 돕습니다.
+
+
+
 - Invalid message in browser
 
   invalid 상태인 input 엘리먼트가 focus 상태일 경우 브라우저에서는 input에 적용된 type에 알맞는 경고메세지를 출력합니다. 이 메세지의 언어는 브라우저에 적용된 언어에 종속되어 있습니다 중국어로 표현되는 브라우저는 input 메세지도 중국어로 표현합니다.
 
 
-- HTML5 API for validation
+- HTML5 Validation methods and properties
 
-  HTML5는 엘리먼트 내에 validation과 관련된 메서드를 제공합니다. 에를 들어 invalid한 상태의 input 엘리먼트에서 노출되는 메세지를 수정하거나, 현재 
+  HTML5는 엘리먼트 내에 validation과 관련된 메서드와 프로퍼티를 제공합니다.
+  이 메서드는 엘리먼트 내에 있는 메서드입니다.
+
+  - 프로퍼티
+    #div.validity.customError
