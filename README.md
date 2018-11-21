@@ -1,18 +1,9 @@
 # TIL
-- UX/UI
-- English
-- FrontEnd
-- Software Principles
-- Programming Paradigms
-- Programming Languages
-- Algorithms & Interview Questions
-- Programmer
 
-## A list of study
-- ReactNative
-  - Yoga
-- Javascript
-- Reading
-  - 실용주의 프로그래머
-  - 해커와 화가
-  - You don't know JS - 1
+- 매일 공부한 내용을 기록합니다.
+
+## 2018.11 공부내용
+
+- Understanding of WebSocket abstract design
+- Yoga Translation
+- Data Structure : HashSet, HashMap(HashTable)
