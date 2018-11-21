@@ -8,3 +8,4 @@
 - Understanding of WebSocket abstract design
 - Yoga Translation
 - Data Structure : HashSet, HashMap(HashTable)
+- Javascript & Typescript : Scope, Prototype, Context
