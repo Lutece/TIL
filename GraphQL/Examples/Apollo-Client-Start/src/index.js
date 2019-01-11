@@ -13,7 +13,7 @@ import { ApolloProvider } from 'react-apollo';
   만약 ApolloClient에서 uri 프로퍼티를 따로 설정하지 않을 시 동일한 호스트 이름을 기반으로 '/graphql' 엔드포인트를 바라보도록 적용된다.
 
   React로 연결하기 전, 바닐라 환경에서 query를 통해 데이터를 요청하는 것을 진행해보겠습니다.
-  graphql-tag는 Client에서 바닐라 JS 기반으로 GraphQL서버에 쿼리를 통해 데이터를 요청할 수 있게 해주는 모듈입니다.
+  graphql-tag는 ES6 환경에서 제공되는 템플릿 리터럴 표기법를 기반으로 GraphQL Query를 작성할 수 있게 해주는 모듈입니다.
 
   다음은 바닐라가 아닌 React 기반으로 만들어진 클라이언트 환경에서 GraphQL 서버와 데이터 통신을 할 수 있게 해보겠습니다.
   React기반으로 ApolloClient를 적용하기 위해서는 Root 컴포넌트를 Provider패턴을 이용하여 ApolloClient를 주입시킵니다.
