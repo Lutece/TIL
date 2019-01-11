@@ -10,3 +10,8 @@
 - Data Structure : HashSet, HashMap(HashTable)
 - Javascript & Typescript : Scope, Prototype, Context
 - GraphQL
+
+## 2019.01 공부내용
+
+- GraphQL
+- Apollo
