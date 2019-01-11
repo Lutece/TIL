@@ -11,6 +11,8 @@
 - Javascript & Typescript : Scope, Prototype, Context
 - GraphQL
 
-## 2019. 01 Study
+## 2019.01 공부내용
 
+- GraphQL
+- Apollo
 - Refactoring second edition
