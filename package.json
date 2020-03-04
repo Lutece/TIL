@@ -1,7 +1,7 @@
 {
   "name": "TIL",
   "version": "1.0.0",
-  "description": "# 2019년 새롭게 TIL 시작.",
+  "description": "# 2020년 새롭게 TIL 시작.",
   "main": "index.js",
   "scripts": {
     "deploy": "git add . && git commit -m 'TIL Upload' && git push origin master"
