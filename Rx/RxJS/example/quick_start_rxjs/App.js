@@ -67,12 +67,13 @@ function App() {
       .pipe(
         debounceTime(200),
         map(e => e.target.value),
-        distinctUntilChanged()
+        distinctUntilChanged(),
+        tap(() => { console.log('keyup') })
       );
 
-    keyup$.subscribe(subject);
+    // keyup$.subscribe(subject);
 
-    const [user$, reset$] = partition(subject, query => query.trim().length > 0);
+    const [user$, reset$] = partition(keyup$, query => query.trim().length > 0);
 
     reset$
       .pipe(
