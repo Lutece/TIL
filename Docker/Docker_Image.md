@@ -67,3 +67,8 @@ CMD
 ## Build
 - Docker 파일에 입력된 것들이 Docker Client에 전달되어서 도커 서버가 인식할 수 있도록해야 합니다.
 - docker build ./ or docker build .
+
+## intermediate container
+1. build가 실행 시 BaseImage 환경이 준비된다.
+2. 임시 Container가 생성됨
+  - 
