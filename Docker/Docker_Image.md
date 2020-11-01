@@ -70,5 +70,23 @@ CMD
 
 ## intermediate container
 1. build가 실행 시 BaseImage 환경이 준비된다.
-2. 임시 Container가 생성됨
-  - 
+2. 임시 Container가 생성되고, BaseImage 환경과 함께 추가적으로 작성한 스크립트와 같은 내용들이 임시 Container에 적용됨. (새로운 명령어, 새로운 파일 스냅샷 등..)
+3. 임시 컨테이너(모든 것이 들어간)를 기반으로 새로운 이미지를 생성하고, 임시 컨테이너는 제거됨
+
+## 이미지에 이름 적용하기
+- 기본적으로 이미지의 이름은 해시값이 적용된다.
+
+```
+docker run -it d7976aedec8a
+```
+
+### 도커 이미지의 이름 짓기
+- -t 나의_도커_아이디/저장소_또는_프로젝트이름:버전
+
+```
+# 빌드를 통해 이미지 생성과 함께 이미지를 생성한다.
+docker build ./ -t lutecebaek/hello-docker:latest
+
+# 이름이 부여된 이미지의 경우 이미지 이름을 통해 이미지를 선택한다.
+docker run -it lutecebaek/hello-docker:latest
+```
