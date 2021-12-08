@@ -1,0 +1,44 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.switch {
+  width: 295px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 50px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.switch[data-ison="true"] {
+  justify-content: flex-end;
+}
+
+.handle {
+  width: 144px;
+  height: 28px;
+  background-color: white;
+  border-radius: 40px;
+}
