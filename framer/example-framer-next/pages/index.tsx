@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Introduction from "../components/Introduction";
 import Ordering from "../components/Ordering";
 import Switch from "../components/Switch";
 import styles from "../styles/Home.module.css";
@@ -17,6 +18,9 @@ const Home: NextPage = () => {
       </section>
       <section style={{ marginTop: "50px" }}>
         <Switch />
+      </section>
+      <section>
+        <Introduction />
       </section>
     </div>
   );
