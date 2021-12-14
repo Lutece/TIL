@@ -3,6 +3,7 @@ import Head from "next/head";
 import Introduction from "../components/Introduction";
 import Ordering from "../components/Ordering";
 import Switch from "../components/Switch";
+import UpDown from "../components/UpDown";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -21,6 +22,9 @@ const Home: NextPage = () => {
       </section>
       <section>
         <Introduction />
+      </section>
+      <section>
+        <UpDown />
       </section>
     </div>
   );
