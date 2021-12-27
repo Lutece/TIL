@@ -1,7 +1,7 @@
 //reducer: 사용자가 상태를 바꾸는 로직을 담은 함수
 //dispatch: 액션 객체를 보낸다.
 
-export function createStore(reducer) {
+export function createStore(reducer, middlewares = []) {
   let state;
   let handlers = [];
 
@@ -17,6 +17,10 @@ export function createStore(reducer) {
   function subscribe(handler) {
     handlers.push(handler);
   }
+
+  // middlewares.forEach((middleware = {
+  //   middleware(action);
+  // });
 
   return {
     dispatch,

@@ -9,6 +9,9 @@ export function reducer(state = InitializeState, action) {
     case ActionType.DECREASE:
       return { ...state, count: state.count - 1 };
     case ActionType.RESET:
+      fetch("/reset")
+        .then((res) => res.json())
+        .then((result) => {});
       return { ...state, count: 0 };
     default:
       return { ...state };
